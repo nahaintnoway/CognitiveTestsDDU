@@ -1,3 +1,6 @@
+#include "reaction_game.h"
+#include "simon_game.h"
+
 enum Game { GAME_NONE, GAME_REACTION, GAME_MEMORY };
 Game currentGame = GAME_NONE;
 
