@@ -1,3 +1,5 @@
+#include "rgb_lcd.h"
+
 int memory_buttonLightTime=-1;
 const int NUM_BUTTONS=3;
 const int SLEEP_BETWEEN_CORRECT_DISPLAY=500;
@@ -9,6 +11,12 @@ int userPath[pattern_length];
 int currentIndex=-1;
 bool memory_gameStarted=false;
 
+rgb_lcd lcd;
+
+const int colorR = 255;
+const int colorG = 0;
+const int colorB = 0;
+
 void memorySetup() {
   for(int i = 0; i < NUM_BUTTONS; i++){
     pinMode(ledPins[i],OUTPUT);
@@ -19,6 +27,10 @@ void memorySetup() {
   randomSeed(analogRead(A0));
   currentIndex=-1;
   memory_gameStarted=true;
+
+  lcd.begin(16, 2);
+  lcd.setRGB(colorR, colorG, colorB);
+  lcd.print("hello");
 }
 
 void memoryLoop() {
