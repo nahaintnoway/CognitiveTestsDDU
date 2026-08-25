@@ -17,6 +17,8 @@ const int colorR = 255;
 const int colorG = 0;
 const int colorB = 0;
 
+void generatePath(int arr[], int size);
+
 void memorySetup() {
   for(int i = 0; i < NUM_BUTTONS; i++){
     pinMode(ledPins[i],OUTPUT);
